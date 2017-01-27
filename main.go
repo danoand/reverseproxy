@@ -38,7 +38,7 @@ func init() {
 func authMidWare(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		// Middleware logic to authenticate the request
-		if r.Header.Get("X-ContentKey") == "OK" {
+		if r.Header.Get(envKey) == envKeyVal {
 			// Correct API Key found, proceed with the next handler
 			next.ServeHTTP(w, r)
 		} else {
