@@ -32,7 +32,7 @@ func init() {
 	}
 }
 
-// authMidWare is a Middleware function that authenticates the inbound request
+// authMidWare is a Middleware function that authenticates the inbound request based on a request header value
 //  requests with the correct header information will continue to the target server
 //  requests with incorrect header information will return as unauthorized
 func authMidWare(next http.Handler) http.Handler {
